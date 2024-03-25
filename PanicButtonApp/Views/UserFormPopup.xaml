@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+                xmlns:viewmodels="clr-namespace:PanicButtonApp.ViewModels" 
+                x:DataType="viewmodels:ProfileViewModel"
+                x:Class="PanicButtonApp.Views.UserFormPopup">
+
+    <Frame Padding="20" BackgroundColor="White">
+        <StackLayout Spacing="20">
+
+            <Entry x:Name="FullNameEntry" Placeholder="Full Name" Text="{Binding User.Fullname}"/>
+            <Entry x:Name="PhoneEntry" Placeholder="Phone" Text="{Binding User.Phone}" />
+
+            <Button Text="Save" 
+                    Clicked="OnSaveClicked"
+                    Margin="10,10" 
+                    BackgroundColor="Red"
+                    BorderColor="Black"
+                    TextColor="White" 
+                    FontSize="Body"
+                    CornerRadius="10"/>
+      
+            <Button Text="Cancel" 
+                    Clicked="OnCancelClicked"
+                    Margin="10,10" 
+                    BackgroundColor="Red"
+                    BorderColor="Black"
+                    TextColor="White" 
+                    FontSize="Body"
+                    CornerRadius="10"/>
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>

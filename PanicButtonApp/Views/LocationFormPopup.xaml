@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+                xmlns:viewmodels="clr-namespace:PanicButtonApp.ViewModels"
+                x:DataType="viewmodels:LocationViewModel"
+                x:Class="PanicButtonApp.Views.LocationFormPopup">
+
+    <Frame Padding="20">
+        <StackLayout Spacing="20">
+            <Entry Placeholder="Area" Text="{Binding CurrentLocation.Area}" />
+            <Entry Placeholder="Plot Number" Text="{Binding CurrentLocation.PlotNumber}" />
+            <Entry Placeholder="Street" Text="{Binding CurrentLocation.Street}" />
+            <Entry x:Name="LatitudeEntry" Placeholder="Latitude" Text="{Binding CurrentLocation.Latitude}" Keyboard="Numeric"/>
+            <Entry x:Name="LongitudeEntry" Placeholder="Longitude" Text="{Binding CurrentLocation.Longitude}" Keyboard="Numeric"/>
+
+            <Button Text="Save" Clicked="OnSaveClicked"
+                    BackgroundColor="Red"
+                    BorderColor="Black"
+                    TextColor="White" 
+                    FontSize="Body"
+                    CornerRadius="10"/>
+            
+            <Button Text="Cancel" Clicked="OnCancelClicked"
+                    BackgroundColor="Red"
+                    BorderColor="Black"
+                    TextColor="White" 
+                    FontSize="Body"
+                    CornerRadius="10"/>
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>
+

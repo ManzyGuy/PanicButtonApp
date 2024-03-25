@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:PanicButtonApp.ViewModels" 
+             x:Class="PanicButtonApp.LocationPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="OnAddLocationClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            
+            <Label Margin="20" Text="Location" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
+            
+            <!-- ListView for displaying locations -->
+            
+            <ListView  x:Name="MyListView"
+                       ItemsSource="{Binding Locations}" 
+                       RowHeight="200"
+                       IsPullToRefreshEnabled="True"
+                       Refreshing="OnRefreshing"
+                       ItemTapped="Handle_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10" Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Area}" FontSize="Medium"/>
+                                        <Label Text="{Binding Street}" FontSize="Medium"/>
+                                        <Label Text="{Binding PlotNumber}" FontSize="Medium"/>
+                                        <Label Text="{Binding Latitude}" FontSize="Medium"/>
+                                        <Label Text="{Binding Longitude}" FontSize="Medium"/>
+                                    </StackLayout>
+                                    
+                                    <!-- Delete Icon --><!--
+                                    <Image Source="icon_delete.png" 
+                                           WidthRequest="50"
+                                           HeightRequest="50">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnDeleteTapped" CommandParameter="{Binding .}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>-->
+                                    
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

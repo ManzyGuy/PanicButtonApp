@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:PanicButtonApp="clr-namespace:PanicButtonApp.Views"
+             xmlns:andriod="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+             x:DataType="PanicButtonApp:Tabbed"
+             andriod:TabbedPage.ToolbarPlacement="Bottom" 
+             BarBackgroundColor="White"
+             SelectedTabColor="Red"
+             UnselectedTabColor="#373737"
+             x:Class="PanicButtonApp.Views.Tabbed">
+    
+    <!--Pages can be added as references or inline-->
+    <PanicButtonApp:TriggerPage Title="Trigger Alert" IconImageSource="icon_trigger.png"></PanicButtonApp:TriggerPage>
+    <PanicButtonApp:EmergenciesPage Title="View Alerts" IconImageSource="icon_viewalerts.png"></PanicButtonApp:EmergenciesPage>
+    <PanicButtonApp:TipsPage Title="Tips" IconImageSource="icon_info.png"></PanicButtonApp:TipsPage>
+    <PanicButtonApp:MorePage Title="More" IconImageSource="icon_more.png"></PanicButtonApp:MorePage>
+
+</TabbedPage>

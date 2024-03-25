@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PanicButtonApp.Views.TriggerPage"
+             Title="Alert Trigger">
+
+    <ContentPage.Content>
+        <StackLayout Margin="20,240">
+            <Button Text="Trigger Alert" TextColor="White"
+                    Clicked="OnButtonClick"
+                    WidthRequest      ="180"
+                    HeightRequest     ="180"
+                    CornerRadius      ="90"
+                    VerticalOptions   ="Center"
+                    HorizontalOptions ="Center"
+                    BackgroundColor   ="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:PanicButtonApp.ViewModels"
+             x:Class="PanicButtonApp.Views.ContactsPage">
+
+    <!--Don't add the datatype-->
+    
+        <StackLayout>
+        <!--<ListView x:Name="MyListView"
+                  ItemsSource="{Binding Items}"
+                  ItemTapped="Handle_ItemTapped"
+                  CachingStrategy="RecycleElement"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="OnRefreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding DisplayName }" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <Label Margin="20" Text="Emergency Contacts" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>    
+        <ListView x:Name="MyListView"
+                  ItemsSource="{Binding Items}"
+                  ItemTapped="Handle_ItemTapped"
+                  CachingStrategy="RecycleElement"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="OnRefreshing"
+                  RowHeight="150">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <Label Text="{Binding GivenName}" FontSize="Medium"/>
+                            <Label Text="{Binding FamilyName}" FontSize="Medium"/>
+                            <Label Text="{Binding Phones}" FontSize="Medium"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Margin="10,10" 
+                Text="Add Contacts"
+                BackgroundColor="Red"
+                BorderColor="Black"
+                TextColor="White" 
+                FontSize="Body"
+                CornerRadius="10"
+                Clicked="OnAddContactsButtonClicked"/>
+    </StackLayout>
+</ContentPage>
